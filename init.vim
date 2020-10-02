@@ -1,5 +1,6 @@
-let g:ale_completion_enabled = 1
-
+"let g:ale_completion_enabled = 1
+let java_highlight_all=1
+let java_highlight_functions=1
 "Specify a directory for plugins.
 call plug#begin(stdpath('data') . '/plugged')
 
@@ -13,7 +14,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 "Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'Olical/conjure', {'tag': 'v4.4.0'}
 Plug 'aswathkk/darkscene.vim'
 Plug 'scrooloose/nerdtree'
@@ -33,14 +34,18 @@ Plug 'junegunn/fzf'
 "    \ }
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'uiiaoo/java-syntax.vim'
+""Plug 'uiiaoo/java-syntax.vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
 " Initialize plugin system.
 call plug#end()
+
+if (has("termguicolors"))
+ set termguicolors
+endif
 syntax enable
-set background=dark
 colorscheme dracula
 
+let NERDTreeMapActivateNode='<space>'
 let mapleader=","
 let maplocalleader = " "
 
@@ -49,9 +54,9 @@ let g:float_preview#docked = 0
 let g:float_preview#max_width = 80
 let g:float_preview#max_height = 40
 
-let g:ale_linters = {
-      \ 'clojure': ['clj-kondo', 'joker']
-      \}
+"let g:ale_linters = {
+"            \ 'clojure': ['clj-kondo', 'joker']
+"      \}
 
 " indentLine
 let g:indentLine_first_char = '┊'
